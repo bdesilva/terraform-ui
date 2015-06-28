@@ -1,0 +1,13 @@
+{
+  "name": "TerraformUI",
+  "description": "A UI project for Terraform",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "angular-animate": "latest",
+    "angular-mocks": "latest",
+    "bootstrap": "latest"
+  }
+}
