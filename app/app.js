@@ -27,26 +27,32 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         // url will be /form/interests
         .state('form.resources', {
             url: '/resources',
-            templateUrl: '../views/form-base-resources.html'
+            templateUrl: '../views/aws/form-base-resources.html'
         })
 
         // url will be /form/payment
         .state('form.infrastructure', {
             url: '/infrastructure',
-            templateUrl: '../views/form-server-infrastructure.html'
+            templateUrl: '../views/aws/form-server-infrastructure.html'
         })
 
         // url will be /form/payment
         .state('form.dnsresolution', {
             url: '/dnsresolution',
-            templateUrl: '../views/form-dns-resolution.html'
+            templateUrl: '../views/aws/form-dns-resolution.html'
         })
 
         // url will be /form/payment
         .state('form.uploadconfig', {
             url: '/uploadconfig',
-            templateUrl: '../views/form-upload-configuration.html'
+            templateUrl: '../views/aws/form-upload-configuration.html'
         })
+
+        // url will be /form/payment
+        .state('aws', {
+            url: '/aws_ec2',
+            templateUrl: '../views/aws/ec2/form-base-resources-ec2.html'
+        });
 
     // catch all route
     // send users to the form page

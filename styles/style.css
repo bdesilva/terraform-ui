@@ -20,11 +20,18 @@ body                            { padding-top:20px; background-image: url('/imag
 
 #signup-form            { position:relative; min-height:300px; overflow:hidden; padding:30px; }
 #form-views             { width:auto; }
+#form-views-vertical    { width:auto; }
 
 /* basic styling for entering and leaving */
 /* left and right added to ensure full width */
 #form-views.ng-enter,
 #form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
+}
+
+/* left and right added to ensure full width */
+#form-views-vertical.ng-enter-vertical,
+#form-views-vertical.ng-leave-vertical  { position:absolute; left:30px; right:30px;
     transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
 }
 
@@ -40,6 +47,20 @@ body                            { padding-top:20px; background-image: url('/imag
     -webkit-animation:slideOutLeft 0.5s both ease;
     -moz-animation:slideOutLeft 0.5s both ease;
     animation:slideOutLeft 0.5s both ease;
+}
+
+/* enter animation vertical*/
+#form-views.ng-leave-vertical    {
+    -webkit-animation:slideInBottom 0.5s both ease;
+    -moz-animation:slideInBottom 0.5s both ease;
+    animation:slideInBottom 0.5s both ease;
+}
+
+/* leave animation vertical*/
+#form-views.ng-enter-vertical    {
+    -webkit-animation:slideOutTop 0.5s both ease;
+    -moz-animation:slideOutTop 0.5s both ease;
+    animation:slideOutTop 0.5s both ease;
 }
 
 /* ANIMATIONS
@@ -67,4 +88,29 @@ body                            { padding-top:20px; background-image: url('/imag
 @-webkit-keyframes slideInRight {
     from    { -webkit-transform:translateX(200%); }
     to      { -webkit-transform: translateX(0); }
+}
+
+/* slide out to the top */
+@keyframes slideOutTop {
+    to      { transform: translateY(-200%); }
+}
+@-moz-keyframes slideOutTop {
+    to      { -moz-transform: translateY(-200%); }
+}
+@-webkit-keyframes slideOutTop {
+    to      { -webkit-transform: translateY(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInBottom {
+    from    { transform:translateY(200%); }
+    to      { transform: translateY(0); }
+}
+@-moz-keyframes slideInBottom {
+    from    { -moz-transform:translateY(200%); }
+    to      { -moz-transform: translateY(0); }
+}
+@-webkit-keyframes slideInBottom {
+    from    { -webkit-transform:translateY(200%); }
+    to      { -webkit-transform: translateY(0); }
 }
