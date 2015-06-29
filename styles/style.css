@@ -31,7 +31,7 @@ body                            { padding-top:20px; background-image: url('/imag
 
 /* left and right added to ensure full width */
 #form-views-vertical.ng-enter-vertical,
-#form-views-vertical.ng-leave-vertical  { position:absolute; left:30px; right:30px;
+#form-views-vertical.ng-leave-vertical  { position:absolute; bottom:30px; top:30px;
     transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
 }
 
@@ -49,18 +49,35 @@ body                            { padding-top:20px; background-image: url('/imag
     animation:slideOutLeft 0.5s both ease;
 }
 
-/* enter animation vertical*/
-#form-views.ng-leave-vertical    {
+/*/!* enter animation vertical*!/
+#form-views-vertical.ng-leave-vertical    {
     -webkit-animation:slideInBottom 0.5s both ease;
     -moz-animation:slideInBottom 0.5s both ease;
     animation:slideInBottom 0.5s both ease;
-}
+}*/
 
-/* leave animation vertical*/
-#form-views.ng-enter-vertical    {
+/*/!* leave animation vertical*!/
+#form-views-vertical.ng-enter-vertical    {
     -webkit-animation:slideOutTop 0.5s both ease;
     -moz-animation:slideOutTop 0.5s both ease;
     animation:slideOutTop 0.5s both ease;
+}*/
+
+/* home */
+.form-views-vertical.ng-enter-vertical {
+    -webkit-animation:slideInUp 0.5s both ease-in;
+    -moz-animation:slideInUp 0.5s both ease-in;
+    animation:slideInUp 0.5s both ease-in;
+    z-index: 8888;
+
+}
+
+/* leave */
+.form-views-vertical.ng-leave-vertical {
+    -webkit-animation:slideDownOut 0.5s both ease-in;
+    -moz-animation:slideDownOut 0.5s both ease-in;
+    animation:slideDownOut 0.5s both ease-in;
+    z-index: 9999;
 }
 
 /* ANIMATIONS
@@ -90,27 +107,57 @@ body                            { padding-top:20px; background-image: url('/imag
     to      { -webkit-transform: translateX(0); }
 }
 
-/* slide out to the top */
+/*/!* slide out to the top *!/
 @keyframes slideOutTop {
-    to      { transform: translateY(-200%); }
+    to      { transform: translateY(-100%); }
 }
 @-moz-keyframes slideOutTop {
-    to      { -moz-transform: translateY(-200%); }
+    to      { -moz-transform: translateY(-100%); }
 }
 @-webkit-keyframes slideOutTop {
-    to      { -webkit-transform: translateY(-200%); }
+    to      { -webkit-transform: translateY(-100%); }
 }
 
-/* slide in from the right */
+/!* slide in from the right *!/
 @keyframes slideInBottom {
-    from    { transform:translateY(200%); }
+    from    { transform:translateY(100%); }
     to      { transform: translateY(0); }
 }
 @-moz-keyframes slideInBottom {
-    from    { -moz-transform:translateY(200%); }
+    from    { -moz-transform:translateY(100%); }
     to      { -moz-transform: translateY(0); }
 }
 @-webkit-keyframes slideInBottom {
-    from    { -webkit-transform:translateY(200%); }
+    from    { -webkit-transform:translateY(100%); }
     to      { -webkit-transform: translateY(0); }
+}*/
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); opacity: 1; }
+    to      { transform: translateY(0); opacity: .5; }
+}
+@-moz-keyframes slideInUp {
+    from    { -moz-transform:translateY(100%); opacity: 1;}
+    to      { -moz-transform: translateY(0); opacity: .5;}
+}
+@-webkit-keyframes slideInUp {
+    from    { -webkit-transform:translateY(100%); opacity: 1;}
+    to      { -webkit-transform: translateY(0); opacity: .5;}
+}
+
+/* --leaving animation--*/
+
+/* slide in from the bottom */
+@keyframes slideDownOut {
+    from    { transform: translateX(0%); opacity: .5; }
+    to      { transform: translateY(100%); opacity: 0;}
+}
+@-moz-keyframes slideDownOut {
+    from    { -moz-transform: translateX(0%); opacity: .5; }
+    to      { -moz-transform: translateY(100%); opacity: 0;}
+}
+@-webkit-keyframes slideDownOut {
+    from    { -webkit-transform: translateX(0%); opacity: .5;}
+    to      { -webkit-transform: translateY(100%); opacity: 0;}
 }

@@ -27,7 +27,14 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
         // url will be /form/interests
         .state('form.resources', {
             url: '/resources',
-            templateUrl: '../views/aws/form-base-resources.html'
+            templateUrl: '../views/aws/form-base-resources.html',
+            controller: function($scope, $state) {
+                /*if (true) {
+                    $state.go('form.ec2');
+                } else {
+                    $state.go('form.s3');
+                }*/
+            }
         })
 
         // url will be /form/payment
@@ -48,10 +55,14 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             templateUrl: '../views/aws/form-upload-configuration.html'
         })
 
-        // url will be /form/payment
         .state('aws', {
             url: '/aws_ec2',
-            templateUrl: '../views/aws/ec2/form-base-resources-ec2.html'
+            templateUrl: '../views/aws/resources/form-base-resources-ec2.html'
+        })
+
+        .state('form.s3', {
+            url: '/aws_s3',
+            templateUrl: '../views/aws/resources/form-base-resources-s3.html'
         });
 
     // catch all route
