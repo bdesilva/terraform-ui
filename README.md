@@ -4,7 +4,8 @@ Terraform UI
 
 ### What is this repository for? ###
 
-* A UI to utilize the features of Terraform
+* A UI to utilize the features of Terraform (Infrastructure as code)
+* Currently in development to support AWS deployments.
 * Version 1.0.0
 
 ### Owner of project ###
