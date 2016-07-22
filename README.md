@@ -2,6 +2,9 @@
 
 Terraform UI (In development)
 
+## UPDATE:
+This repo is back in development and I will be updating it as regularly as I can.
+
 ### What is this repository for? ###
 
 * A UI to utilize the features of Terraform (Infrastructure as code)
