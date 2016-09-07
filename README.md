@@ -4,6 +4,7 @@ Terraform UI (In development)
 
 ## UPDATE:
 This repo is back in development and I will be updating it as regularly as I can.
+NOTE: Please don't use the AngularJS version as it's a bit old and possibly broken, so I'm working on a new ReactJS version currently and hope to have that up soon.
 
 ### What is this repository for? ###
 
